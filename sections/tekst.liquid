@@ -10,30 +10,22 @@
 {% endfor %}
 
 {% schema %}
+{
+  "name": "Tekstvak",
+  "tag": "section",
+  "class": "tekstvak",
+  "blocks": [
     {
-        "name": "Test",
-        "tag": "section",
-        "class": "test",
-        "limit": 1,
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Testing"
-            }
-        ],
-        "blocks": [
-            {
-                "name": "Testing_block",
-                "type": "slide",
-                "settings": [
-                    {
-                        "type": "image_picker",
-                        "id": "image",
-                        "label": "Testing"
-                    }
-                ]
-            }
-        ]
+      "name": "tekstveld",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tekstveld",
+          "label": "Tekstveld"
+        }
+      ]
     }
+  ]
+}
 {% endschema %}
