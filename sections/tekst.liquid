@@ -1,7 +1,39 @@
-<p>Dit is een eerste test voor section tekst.liquid allo</p>
+<p>Dit is een eerste test voor section tekst.liquid</p>
+
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'slide' %}
+            <div class="slide" {{ block.shopify_attributes }}>
+                {{ block.settings.image | image_url: width: 2048 | image_tag }}
+            </div>
+    {% endcase %}
+{% endfor %}
 
 {% schema %}
     {
-        "name": "Slideshow"
+        "name": "Slideshow",
+        "tag": "section",
+        "class": "slideshow",
+        "limit": 1,
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Header"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ]
     }
 {% endschema %}
