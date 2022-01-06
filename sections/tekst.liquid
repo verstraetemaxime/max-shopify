@@ -1,13 +1,5 @@
-<p>Dit is een eerste test voor section tekst.liquid</p>
+<p>{{ block.settings.tekstveld }}</p>
 
-{% for block in section.blocks %}
-    {% case block.type %}
-        {% when 'slide' %}
-            <div class="slide" {{ block.shopify_attributes }}>
-                {{ block.settings.image | image_url: width: 2048 | image_tag }}
-            </div>
-    {% endcase %}
-{% endfor %}
 
 {% schema %}
 {
