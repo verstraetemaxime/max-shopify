@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ 'test.css' | asset_url }}" media="print" onload="this.media='all'">
-
+{% assign menu = linklist.main-menu %}
+{{ menu.title }}: {{ menu.levels }}
 
 <nav>
     <ul>
@@ -26,7 +27,13 @@
           "label": "Testing"
         }
       ]
-    }
+    },
+    {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "t:sections.header.settings.menu.label"
+      }
   ]
 }
 {% endschema %}
