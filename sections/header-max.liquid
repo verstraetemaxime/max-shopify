@@ -2,6 +2,10 @@
 {% assign menu = linklist.main-menu %}
 {{ menu.title }}: {{ menu.levels }}
 
+{% for link in linklists.main-menu.links %}
+    <p>{{ link.title }}</p>
+{% endfor %}
+
 <nav>
     <ul>
         <li>TESTje</li>
@@ -29,11 +33,11 @@
       ]
     },
     {
-        "type": "link_list",
-        "id": "menu",
-        "default": "main-menu",
-        "label": "t:sections.header.settings.menu.label"
-      }
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    }
   ]
 }
 {% endschema %}
